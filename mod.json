@@ -3,14 +3,12 @@
 	"gd": {
 		"win": "2.2081"
 	},
-	"version": "v1.5.1-lc1",
+	"version": "v1.5.1",
 	"id": "local.cbf_late_cutoff",
 	"name": "CBF Late Cutoff",
 	"developer": "fork of CBF by syzzi (theyareonit)",
 	"description": "Fork of Click Between Frames 1.5.0 with the old \"Late Input Cutoff\" option brought back (experimental). Do not enable together with the original CBF.",
-	"incompatibilities": {
-		"syzzi.click_between_frames": ">=1.0.0"
-	},
+	
 	"tags": [
 		"performance",
 		"gameplay",
