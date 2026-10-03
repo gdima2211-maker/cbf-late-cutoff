@@ -1,0 +1,147 @@
+{
+	"geode": "5.3.0",
+	"gd": {
+		"win": "2.2081"
+	},
+	"version": "v1.5.0-lc1",
+	"id": "local.cbf_late_cutoff",
+	"name": "CBF Late Cutoff",
+	"developer": "fork of CBF by syzzi (theyareonit)",
+	"description": "Fork of Click Between Frames 1.5.0 with the old \"Late Input Cutoff\" option brought back (experimental). Do not enable together with the original CBF.",
+	"incompatibilities": {
+		"syzzi.click_between_frames": ">=1.0.0"
+	},
+	"tags": [
+		"performance",
+		"gameplay",
+		"enhancement"
+	],
+	"settings": {
+		"functionality-category": {
+			"name": "Functionality",
+			"type": "title"
+		},
+		"soft-toggle": {
+			"name": "Disable CBF",
+			"description": "Disable CBF/CoS without needing to restart GD. This option does not disable physics bypass if you have it enabled!",
+			"type": "bool",
+			"default": false
+		},
+		"safe-mode": {
+			"name": "Safe Mode",
+			"description": "Disable progress & stats on rated levels.",
+			"type": "bool",
+			"default": false
+		},
+		"click-on-steps": {
+			"name": "Click on Steps",
+			"description": "Only register inputs with 240TPS precision. Should have identical physics to vanilla.",
+			"type": "bool",
+			"default": false
+		},
+		"performance-category": {
+			"name": "Performance",
+			"type": "title",
+			"platforms": [
+				"win"
+			]
+		},
+		"mouse-fix": {
+			"name": "Reduce Mouse Lag",
+			"description": "Reduce lag when using high polling rate mice.\nExperimental, may break things.",
+			"type": "bool",
+			"default": false,
+			"platforms": [
+				"win"
+			]
+		},
+		"precision-fix": {
+			"name": "Precision Fix",
+			"description": "Improve input precision by preventing framerate desync.\nExperimental, may break things.",
+			"type": "bool",
+			"default": true,
+			"platforms": [
+				"win"
+			]
+		},
+		"late-cutoff": {
+			"name": "Late Input Cutoff",
+			"description": "Check for inputs right before physics instead of at the start of the frame.\n\nSlightly reduces input lag, but may slightly hurt precision. Experimental.",
+			"type": "bool",
+			"default": true,
+			"platforms": [
+				"win"
+			]
+		},
+		"late-cutoff-keys": {
+			"name": "Late Cutoff: Keyboard",
+			"description": "Also apply Late Input Cutoff to keyboard jump/move keys (Space, W, Up, A, D, Left, Right). Mouse click is always included.",
+			"type": "bool",
+			"default": true,
+			"enable-if": "late-cutoff",
+			"platforms": [
+				"win"
+			]
+		},
+		"pb-category": {
+			"name": "Physics Bypass",
+			"type": "title",
+			"platforms": [
+				"win"
+			]
+		},
+		"physics-bypass": {
+			"name": "Enable Physics Bypass",
+			"description": "Reduces stuttering on some FPS values. Active even if \"Disable CBF\" is checked.\n\nTHIS WILL ALTER PHYSICS AND MAY BREAK SOME LEVELS! DON'T USE THIS IF YOUR LIST/LEADERBOARD BANS PHYSICS BYPASS!",
+			"type": "bool",
+			"default": false,
+			"platforms": [
+				"win"
+			]
+		},
+		"bypass-mode": {
+			"name": "Physics Bypass Mode",
+			"description": "2.2 mode means as few collision checks per frame as possible (with a minimum of 240 checks per second).\n\n2.1 mode means 4 collision checks per frame at 60fps or above",
+			"type": "string",
+			"one-of": [
+				"2.2",
+				"2.1"
+			],
+			"default": "2.2",
+			"platforms": [
+				"win"
+			]
+		},
+		"linux-category": {
+			"name": "Linux",
+			"type": "title",
+			"platforms": [
+				"win"
+			]
+		},
+		"wine-workaround": {
+			"name": "Wine Workaround",
+			"description": "Wine doesn't let you get keyboard input between frames, so this is a workaround. However, it may not work properly on some PCs.\n\nOnly disable if experiencing issues (and don't play with keyboard if you disable it).",
+			"type": "bool",
+			"default": true,
+			"requires-restart": true,
+			"enable-if": "saved:you-must-be-on-linux-to-change-this",
+			"platforms": [
+				"win"
+			]
+		},
+		"right-click": {
+			"name": "Right Click P2",
+			"description": "Use right click for player 2 jump.",
+			"type": "bool",
+			"default": false,
+			"enable-if": "saved:you-must-be-on-linux-to-change-this && wine-workaround",
+			"platforms": [
+				"win"
+			]
+		}
+	},
+	"links": {
+		"source": "https://github.com/theyareonit/Click-Between-Frames"
+	}
+}
