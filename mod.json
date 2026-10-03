@@ -3,7 +3,7 @@
 	"gd": {
 		"win": "2.2081"
 	},
-	"version": "v1.5.0-lc1",
+	"version": "v1.5.1-lc1",
 	"id": "local.cbf_late_cutoff",
 	"name": "CBF Late Cutoff",
 	"developer": "fork of CBF by syzzi (theyareonit)",
